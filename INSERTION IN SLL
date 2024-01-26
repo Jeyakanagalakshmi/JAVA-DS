@@ -1,0 +1,47 @@
+INSERTION IN SLL
+
+public class demo {
+    public static void main(String args[]) {
+        // Try out your code here
+        LinkedList list = new LinkedList();
+        list.insertAtBeginning(9);
+        list.insertAtBeginning(9);
+        list.display();
+    }
+
+    public static class LinkedList {
+        node head;
+
+        public class node {
+            int data;
+            node next;
+
+            node(int val) {
+                data = val;
+                next = null;
+            }
+        }
+
+        LinkedList() {
+            head = null;
+        }
+
+        public void insertAtBeginning(int val) {
+            node newnode = new node(val);
+            if (head == null)
+                head = newnode;
+            else {
+                newnode.next = head;
+                head = newnode;
+            }
+        }
+
+        public void display() {
+            node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + " ");
+                temp = temp.next;
+            }
+        }
+    }
+}
