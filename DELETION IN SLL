@@ -1,0 +1,61 @@
+DELETION IN SLL
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Create an empty linked list
+        LinkedList list = new LinkedList();
+
+        // Input numbers until a negative value is encountered
+        int input;
+        while (true) {
+            input = scanner.nextInt();
+            if (input < 0) {
+                break;
+            }
+            list.insertAtBeginning(input);
+        }
+
+        // Display the list
+        list.display();
+    }
+
+    public static class LinkedList {
+        Node head;
+
+        public class Node {
+            int data;
+            Node next;
+
+            Node(int val) {
+                data = val;
+                next = null;
+            }
+        }
+
+        LinkedList() {
+            head = null;
+        }
+
+        public void insertAtBeginning(int val) {
+            Node newNode = new Node(val);
+            if (head == null) {
+                head = newNode;
+            } else {
+                newNode.next = head;
+                head = newNode;
+            }
+        }
+
+        public void display() {
+            Node temp = head;
+            while (temp != null) {
+                System.out.println(temp.data);
+                temp = temp.next;
+            }
+        }
+    }
+}
