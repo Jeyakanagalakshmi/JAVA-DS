@@ -1,0 +1,28 @@
+//Multiple classes for the program
+import java.util.*;
+class circle1{
+    public static void main(String args[]){
+        circle c=new circle(3.0,5.0,7.0);
+        circle d=new circle(7.0,6.0,9.0);
+        System.out.println(c.cir());
+        System.out.println(c.area());
+        System.out.println(d.cir());
+        System.out.print(d.area());
+    }
+}
+public class circle{
+    double x,y;
+    double r;
+    double cir(){
+        return 2*3.14159*r;
+    }
+    double area(){
+        return (22/3)*r*r;
+    }
+    //this keyword
+    circle(double x,double y,double r){
+      this.x=x;
+       this.y=y;
+        this.r=r;
+    }
+}
