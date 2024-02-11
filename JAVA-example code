@@ -1,0 +1,21 @@
+import java.util.*;
+class circle1{
+    public static void main(String args[]){
+        circle c=new circle();
+        c.x=0.0;
+        c.y=0.0;
+        c.r=5.0;
+        System.out.println(c.cir());
+        System.out.print(c.area());
+    }
+}
+public class circle{
+    double x,y;
+    double r;
+    double cir(){
+        return 2*3.14159*r;
+    }
+    double area(){
+        return (22/3)*r*r;
+    }
+}
