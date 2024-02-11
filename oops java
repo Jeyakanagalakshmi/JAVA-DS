@@ -1,0 +1,28 @@
+//Multiple objects for the same class
+import java.util.*;
+class circle1{
+    public static void main(String args[]){
+        circle c=new circle();
+        circle d=new circle();
+        c.x=0.0;
+        c.y=0.0;
+        c.r=5.0;
+        d.x=0.0;
+        d.y=0.0;
+        d.r=15.0;
+        System.out.println(c.cir());
+        System.out.println(c.area());
+        System.out.println(d.cir());
+        System.out.print(d.area());
+    }
+}
+public class circle{
+    double x,y;
+    double r;
+    double cir(){
+        return 2*3.14159*r;
+    }
+    double area(){
+        return (22/3)*r*r;
+    }
+}
