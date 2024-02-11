@@ -1,0 +1,29 @@
+import java.lang.*;
+import java.util.*;
+class main{
+  public static void main(String args[]){
+    student s1=new student(41130200,"LAKSHMI","JAVA");
+    student s2=new student(41130229,"KANMANI","PYTHON",500);
+    s1.display();
+    s2.display();
+  }
+}
+class student{
+  int roll_no;
+  String name,course;
+  float fee;
+  //constructor
+  student(int roll_no,String name,String course){
+    this.roll_no=roll_no;
+    this.name=name;
+    this.course=course;
+  }
+  student(int roll_no,String name,String course,float fee){
+    this(roll_no,name,course);//reusing constructor
+    this.fee=fee;
+    
+  }
+  void display(){
+    System.out.println(roll_no+" "+name+" "+course+" "+fee);
+  }
+}
