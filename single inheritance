@@ -1,0 +1,26 @@
+class main{
+    public static void main(String args[]){
+        a a1=new a();
+        b b1=new b();
+        a1.i=1;
+        a1.j=2;
+        b1.i=1;
+        b1.j=2;
+        b1.k=9;
+        a1.dis();
+        b1.dis();
+        
+    }
+    public static class  a{
+        int i,j;
+        void dis(){
+            System.out.println("i and j values are:"+i+" "+j);
+        }
+    }
+    public static class b extends a{
+        int k;
+        void dis(){
+            System.out.println("i and j and k values are:"+i+" "+j+" "+k);
+        }
+    }
+}
