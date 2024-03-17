@@ -1,0 +1,15 @@
+//finding sum of n natural numbers
+import java.lang.*;
+import java.util.*;
+public class Main
+{
+    public int findsum(int n){
+        return n*(n+1)/2;
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int a=sc.nextInt();
+	    Main demo=new Main();
+		System.out.println(demo.findsum(a));
+	}
+}
