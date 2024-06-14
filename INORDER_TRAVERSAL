@@ -1,0 +1,63 @@
+import java.lang.*;
+import java.util.*;
+
+class Node {
+    int val;
+    Node left, right;
+
+    Node(int d) {
+        this.val = d;
+        this.left = null;
+        this.right = null;
+    }
+}
+
+public class Main {
+    Node root = null;
+
+    Node create() {
+        Scanner sc = new Scanner(System.in);
+        Queue<Node> q = new LinkedList<>();
+        System.out.print("Enter root node value: ");
+        int d = sc.nextInt();
+        if (d == -1) {
+            return null;
+        }
+        Node newNode = new Node(d);
+        root = newNode;
+        q.add(root);
+        while (!q.isEmpty()) {
+            Node curr = q.poll();
+            System.out.print("Enter left child of " + curr.val + " (or -1 if no left child): ");
+            int l = sc.nextInt();
+            if (l != -1) {
+                Node lNode = new Node(l);
+                curr.left = lNode;
+                q.add(lNode);
+            }
+            System.out.print("Enter right child of " + curr.val + " (or -1 if no right child): ");
+            int r = sc.nextInt();
+            if (r != -1) {
+                Node rNode = new Node(r);
+                curr.right = rNode;
+                q.add(rNode);
+            }
+        }
+        return root;
+    }
+
+    void inorder(Node root) {
+        if (root != null) {
+            inorder(root.left);
+            System.out.print(root.val + " ");
+            inorder(root.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        Main m = new Main();
+        Node root = m.create();
+        System.out.println("Inorder traversal of the binary tree:");
+        m.inorder(root);
+    }
+}
